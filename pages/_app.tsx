@@ -47,8 +47,7 @@ export const NORMALIZE_ROYALTIES = process.env.NEXT_PUBLIC_NORMALIZE_ROYALTIES
   ? process.env.NEXT_PUBLIC_NORMALIZE_ROYALTIES === 'true'
   : false
 
-const WALLET_CONNECT_PROJECT_ID =
-  process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || ''
+const WALLET_CONNECT_PROJECT_ID = '0e11adav112d76d4de6f631dsa12b7321' || ''
 
 const { chains, publicClient } = configureChains(supportedChains, [
   alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_ID || '' }),
