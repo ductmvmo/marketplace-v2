@@ -118,6 +118,21 @@ export const linea = {
   },
 } as const satisfies Chain
 
+export const test = {
+  id: 5,
+  name: 'Test',
+  network: 'Test',
+  nativeCurrency: { name: 'Test', symbol: 'Test', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://ethereum-goerli.publicnode.com'] },
+    public: { http: ['https://ethereum-goerli.publicnode.com'] },
+  },
+  blockExplorers: {
+    etherscan: { name: 'TestScan', url: 'https://goerli.etherscan.io/' },
+    default: { name: 'TestScan', url: 'https://goerli.etherscan.io/' },
+  },
+} as const satisfies Chain
+
 //CONFIGURABLE: The default export controls the supported chains for the marketplace. Removing
 // or adding chains will result in adding more or less chains to the marketplace.
 // They are an extension of the wagmi chain objects
@@ -332,5 +347,17 @@ export default [
     coingeckoId: 'ethereum',
     collectionSetId: process.env.NEXT_PUBLIC_LINEA_COLLECTION_SET_ID,
     community: process.env.NEXT_PUBLIC_LINEA_COMMUNITY,
+  },
+  {
+    ...test,
+    lightIconUrl: '/icons/avalanche-icon-dark.svg',
+    darkIconUrl: '/icons/avalanche-icon-light.svg',
+    reservoirBaseUrl: 'https://api-goerli.reservoir.tools/',
+    proxyApi: '/api/reservoir/goerli',
+    routePrefix: 'goerli',
+    apiKey: process.env.RESERVOIR_API_KEY,
+    coingeckoId: 'goerli',
+    collectionSetId: process.env.NEXT_PUBLIC_AVALANCHE_COLLECTION_SET_ID,
+    community: process.env.NEXT_PUBLIC_AVALANCHE_COMMUNITY,
   },
 ] as ReservoirChain[]
