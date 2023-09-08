@@ -117,7 +117,7 @@ export const linea = {
     },
   },
 } as const satisfies Chain
-
+console.log('test')
 export const test = {
   id: 5,
   name: 'Test',
